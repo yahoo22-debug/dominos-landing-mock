@@ -1,0 +1,78 @@
+/* styles.css - simple CSS to mimic the layout in screenshots */
+:root{
+  --accent:#d93a2f; /* Domino-ish red */
+  --muted:#f6f6f6;
+  --card-white:#fff;
+  --text:#333;
+  --max-width:1100px;
+  --gap:18px;
+  font-family: "Segoe UI", Roboto, Arial, sans-serif;
+  box-sizing: border-box;
+}
+*{box-sizing:inherit}
+html,body{height:100%;margin:0;color:var(--text);background:#fafafa;}
+.container{max-width:var(--max-width);margin:0 auto;padding:20px;}
+
+.site-header{
+  background:#fff;
+  border-bottom:1px solid #eee;
+  position:sticky;
+  top:0;
+  z-index:10;
+}
+.header-inner{display:flex;align-items:center;justify-content:space-between;}
+.brand{display:flex;align-items:center;gap:12px;}
+.brand h1{margin:0;font-size:22px;color:var(--accent);color: rgb(129, 129, 225);}
+
+.nav a{
+  color: rgb(129, 129, 225);
+  text-decoration:none;
+  margin-left:18px;
+  font-size:14px;
+}
+
+/* Top section */
+.top-section{padding:18px 0;}
+.top-cards{display:grid;grid-template-columns:repeat(3,1fr);gap:var(--gap);align-items:start;}
+.card{background:var(--accent);color:#fff;padding:18px;border-radius:2px;display:flex;flex-direction:column;align-items:center;}
+.card-large{min-height:140px;display:flex;flex-direction:row;gap:18px;padding:28px;}
+.card-img img{width:140px;height:140px;object-fit:cover;border:8px solid #fff;background:#fff;}
+.card-body{flex:1;text-align:left;}
+.card-body h2{font-size:26px;margin:4px 0 8px 0;letter-spacing:1px;}
+.card-body p{opacity:.95;line-height:1.4;}
+.btn{background:#fff;color:var(--accent);padding:10px 14px;border:none;margin-top:12px;font-weight:600;border-radius:3px;cursor:pointer;}
+
+/* Mid section - small cards */
+.mid-section{padding:28px 0;}
+.mid-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;}
+.small-card{background:#fff;border:1px solid #eee;padding:20px;border-radius:4px;text-align:center;}
+.small-card .icon{font-size:28px;margin-bottom:8px;}
+.small-card h3{margin:6px 0 8px 0;color:var(--accent);}
+.small-card p{font-size:14px;color:#666;margin-bottom:10px;}
+.link{color:var(--accent);font-weight:700;text-decoration:none;}
+
+/* bottom section */
+.bottom-section{padding:28px 0;border-top:4px solid #eee;}
+.bottom-inner{display:flex;gap:20px;align-items:center;}
+.phones img{height:160px;margin-right:10px;}
+.download{flex:1;}
+.download h2{color:var(--accent);margin:0 0 8px 0;font-size:24px;}
+.stores{display:flex;gap:12px;margin-top:10px;}
+.store img{height:44px;}
+
+/* footer */
+.site-footer{background:#fff;border-top:1px solid #eee;padding:18px;text-align:center;color:#777;margin-top:40px;}
+
+/* responsive */
+@media (max-width:980px){
+  .top-cards{grid-template-columns:1fr;}
+  .mid-grid{grid-template-columns:repeat(2,1fr);}
+  .bottom-inner{flex-direction:column;align-items:flex-start;}
+  .card-large{flex-direction:column;align-items:center;text-align:center;}
+  .card-body{text-align:center;}
+}
+@media (max-width:520px){
+  .mid-grid{grid-template-columns:1fr;}
+  .nav{display:none;}
+  .brand h1{font-size:18px;}
+}
